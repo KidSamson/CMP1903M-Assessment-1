@@ -17,7 +17,13 @@ namespace CMP1903M_Assessment_1_Base_Code
         //Gets text input from the keyboard
         public string manualTextInput()
         {
-
+            Console.WriteLine("Enter a sentence to be analysed: ");
+            string sent = Console.ReadLine();
+            if (sent != null)
+                text = sent;
+            else { 
+                Console.WriteLine("You did not enter a sentence");
+                    }
             return text;
         }
 
@@ -27,7 +33,7 @@ namespace CMP1903M_Assessment_1_Base_Code
         //Gets text input from a .txt file
         public string fileTextInput(string fileName)
         {
-
+            text = File.ReadAllText(fileName);
             return text;
         }
 
