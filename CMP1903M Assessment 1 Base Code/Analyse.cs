@@ -21,7 +21,7 @@ namespace CMP1903M_Assessment_1_Base_Code
             {
 
                 int vowTotal = 0;
-                // Build a list of vowels up front:
+                // Define vowels:
                 var vowels = new HashSet<char> { 'a', 'e', 'i', 'o', 'u' };
 
 
@@ -40,7 +40,7 @@ namespace CMP1903M_Assessment_1_Base_Code
             {
 
                 int consTotal = 0;
-                // Build a list of consonants up front:
+                // define consonants:
                 var consonants = new HashSet<char> { 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'x', 'z', 'w', 'y' };
 
 
@@ -59,7 +59,7 @@ namespace CMP1903M_Assessment_1_Base_Code
             {
 
                 int sentsTotal = 0;
-                // Build a list of sentence ends up front:
+                // define ends of sentences:
                 var sentSplits = new HashSet<char> { '.', '?', '!' };
 
 

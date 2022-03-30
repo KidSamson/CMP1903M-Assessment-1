@@ -18,12 +18,7 @@ namespace CMP1903M_Assessment_1_Base_Code
         public string manualTextInput()
         {
             Console.WriteLine("Enter a sentence to be analysed: ");
-            string sent = Console.ReadLine();
-            if (sent != null)
-                text = sent;
-            else { 
-                Console.WriteLine("You did not enter a sentence");
-                    }
+            text = Console.ReadLine();
             return text;
         }
 

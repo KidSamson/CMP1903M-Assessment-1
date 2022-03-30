@@ -16,33 +16,51 @@ namespace CMP1903M_Assessment_1_Base_Code
 
             //Create 'Input' object
             //Get either manually entered text, or text from a file
-
-            Input input = new Input();
+            Input textInput = new Input();
+            string text = null;
             int menuChoice;
-            string text = " ";
-
-            Console.WriteLine(" 1: Do you want to enter the text via the keyboard? \n " +
-                "2: Do you want to read in the text from a file?");
-            menuChoice = Convert.ToInt32(Console.ReadLine());
-            if (menuChoice == 1)
+            string numMenuInput;
+            bool validInput;
+            bool menuProceed = true;
+            
+            while (menuProceed)
             {
-                text = input.manualTextInput();
-            }
-            else if (menuChoice == 2)
-                Console.WriteLine("Enter filename: ");
-                text = input.fileTextInput(Console.ReadLine());
+                Console.WriteLine("What would you like to do? Enter 1 or 2");
+                Console.WriteLine("1. Enter text from the keyboard");
+                Console.WriteLine("2. Read in text from a file");
+                numMenuInput = Console.ReadLine();
 
-                
-                
+                Int32.TryParse(numMenuInput, out menuChoice);
+
+
+                if (menuChoice == 1)
+                {
+                    menuProceed = false;
+                    text = textInput.manualTextInput();
+                }
+
+                else if (menuChoice == 2)
+                {
+                    menuProceed= false;
+                    Console.WriteLine("Enter a filepath:");
+                    text = textInput.fileTextInput(Console.ReadLine());
+                }
+                else
+                {
+                    Console.WriteLine("You must enter 1 or 2 to proceed");
+                }
+
+            }
+          
                 
             //Create an 'Analyse' object
             //Pass the text input to the 'analyseText' method
 
-            Analyse analyse = new Analyse();
-
+            Analyse analyseSent = new Analyse();
+            
 
             //Receive a list of integers back
-            parameters = analyse.analyseText(text);
+            parameters = analyseSent.analyseText(text);
 
 
             //Report the results of the analysis
