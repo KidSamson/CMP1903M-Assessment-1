@@ -24,9 +24,10 @@ namespace CMP1903M_Assessment_1_Base_Code
                 // Define vowels:
                 var vowels = new HashSet<char> { 'a', 'e', 'i', 'o', 'u' };
 
-
+                // Loops over characters in input to check against those in list and increments 
+                // vowtotal when found
                 for (int i = 0; i < input.Length; i++)
-                {
+                {       //ToLower method is used to convert string, saves need of defining both upper and lose case vowels
                     if (vowels.Contains(input.ToLower()[i]))
                     {
                         vowTotal++;
@@ -44,8 +45,10 @@ namespace CMP1903M_Assessment_1_Base_Code
                 var consonants = new HashSet<char> { 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'x', 'z', 'w', 'y' };
 
 
+                // Loops over characters in input to check against those in list and increments 
+                // constotal when found
                 for (int i = 0; i < input.Length; i++)
-                {
+                {       //ToLower method is used to convert string, saves need of defining both upper and lose case consonants
                     if (consonants.Contains(input.ToLower()[i]))
                     {
                         consTotal++;
@@ -63,6 +66,8 @@ namespace CMP1903M_Assessment_1_Base_Code
                 var sentSplits = new HashSet<char> { '.', '?', '!' };
 
 
+                // Loops through characters in input to check against those in list and increments 
+                // sentSplits when found
                 for (int i = 0; i < input.Length; i++)
                 {
                     if (sentSplits.Contains(input[i]))
@@ -75,6 +80,10 @@ namespace CMP1903M_Assessment_1_Base_Code
 
             static int GetUppers(string input)
             {
+
+                // Loops through characters in input and uses static IsUpper method to check
+                //  whether they are upper case, uppersTotal is incremented when upper case characters
+                // are found
                 int uppersTotal = 0;
                 for (int i = 0; i < input.Length; i++)
                 {
@@ -85,6 +94,9 @@ namespace CMP1903M_Assessment_1_Base_Code
 
             static int GetLowers(string input)
             {
+                // Loops through characters in input and uses static IsLower method to check
+                //  whether they are upper case, lowersTotal is incremented when upper case characters
+                // are found
                 int lowersTotal = 0;
                 for (int i = 0; i < input.Length; i++)
                 {
@@ -106,6 +118,8 @@ namespace CMP1903M_Assessment_1_Base_Code
                 values.Add(0);
              
             }
+
+            // Calls methods and assigns return values to "values" list
             values[0] = GetSents(input);
             values[1] = GetVow(input);
             values[2] = GetCons(input);

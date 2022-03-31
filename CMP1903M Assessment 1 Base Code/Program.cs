@@ -20,9 +20,11 @@ namespace CMP1903M_Assessment_1_Base_Code
             string text = null;
             int menuChoice;
             string numMenuInput;
-            bool validInput;
             bool menuProceed = true;
             
+            // This loops handles both the user selecting from the menu and ensures that the user can only enter
+            // a valid input (1 or 2) from the keyboard
+
             while (menuProceed)
             {
                 Console.WriteLine("What would you like to do? Enter 1 or 2");
@@ -30,8 +32,11 @@ namespace CMP1903M_Assessment_1_Base_Code
                 Console.WriteLine("2. Read in text from a file");
                 numMenuInput = Console.ReadLine();
 
+                // Trys to parse readline as an int, and returns both the int as menuChoice and a boolean value as menuproceed
+
                 Int32.TryParse(numMenuInput, out menuChoice);
 
+                // calls manualTextInput method and breaks out of while loop
 
                 if (menuChoice == 1)
                 {
@@ -39,12 +44,17 @@ namespace CMP1903M_Assessment_1_Base_Code
                     text = textInput.manualTextInput();
                 }
 
+                //calls fileTextInput method and breaks out of while loop
+
                 else if (menuChoice == 2)
                 {
                     menuProceed= false;
                     Console.WriteLine("Enter a filepath:");
                     text = textInput.fileTextInput(Console.ReadLine());
                 }
+
+                // returns user to top of loop as no valid input is read
+
                 else
                 {
                     Console.WriteLine("You must enter 1 or 2 to proceed");
